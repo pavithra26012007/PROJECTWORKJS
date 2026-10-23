@@ -6,53 +6,73 @@
 <title>Pavithra S | Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--p:#8b5cf6;--pink:#ec4899;--bg:#0f0f14;--card:#1a1a23;--line:#2a2a3a;--text:#e5e7eb;--muted:#9ca3af;}
+:root{
+  --purple:#8b5cf6;
+  --pink:#ec4899;
+  --bg:#fdf2f8;
+  --card:#ffffff;
+  --line:#e9d5ff;
+  --text:#1e1b4b;
+  --muted:#6b7280;
+}
+body.dark{
+  --bg:#0f0f14;
+  --card:#1a1a23;
+  --line:#2a2a3a;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Manrope',sans-serif;font-size:12px;color:var(--text);background:var(--bg);line-height:1.5;overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;z-index:-2;background:radial-gradient(600px at 20% 10%,rgba(139,92,246,0.15),transparent),radial-gradient(800px at 80% 90%,rgba(236,72,153,0.12),transparent),linear-gradient(180deg,#0f0f14,#15151f);}
-.container{width:min(850px,100% - 20px);margin:0 auto;}
-.site-header{position:sticky;top:0;z-index:99;background:rgba(15,15,20,0.9);backdrop-filter:blur(12px);border-bottom:1.5px solid var(--line);}
-.navbar{display:flex;justify-content:space-between;align-items:center;min-height:56px;}
-.logo{font-size:17px;font-weight:800;text-decoration:none;color:white;cursor:pointer;} .logo span{color:var(--p);}
-.nav-links{display:flex;list-style:none;gap:6px;flex-wrap:wrap;}
-.nav-links a{text-decoration:none;color:var(--muted);font-weight:700;font-size:10px;padding:7px 12px;border-radius:20px;cursor:pointer;transition:0.3s;border:1.5px solid var(--line);background:#1e1e2a;}
-.nav-links a:hover,.nav-links a.active{background:linear-gradient(90deg,var(--p),var(--pink));color:white;border-color:transparent;box-shadow:0 4px 15px rgba(139,92,246,0.4);}
-.page{display:none;animation:pageIn 0.4s ease;} .page.active{display:block;}
-@keyframes pageIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
-.section{padding:28px 0;}
-.eyebrow{font-size:9px;letter-spacing:2px;font-weight:800;color:var(--p);margin-bottom:6px;}
-.section-title{font-size:21px;margin:0 0 14px;font-weight:800;color:white;}
-.profile-wrapper{position:relative;width:180px;height:200px;margin:0 auto 14px;display:grid;place-items:center;}
-.profile-wrapper img{width:160px!important;height:190px!important;border-radius:22px!important;object-fit:cover!important;object-position:50% 10%!important;border:3px solid #2a2a3a!important;box-shadow:0 0 0 3px #8b5cf6,0 12px 30px rgba(0,0,0,0.5)!important;transform:rotate(0deg)!important;background:#1a1a23;display:block;}
-.hero-copy{text-align:center;} .hero-copy h1{font-size:23px;margin:8px 0;color:white;} .hero-copy h1 span{background:linear-gradient(90deg,var(--p),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.button{display:inline-flex;padding:8px 16px;border-radius:20px;font-weight:700;font-size:11px;text-decoration:none;cursor:pointer;transition:0.3s;}
-.primary{background:linear-gradient(90deg,var(--p),var(--pink));color:white;box-shadow:0 4px 12px rgba(139,92,246,0.4);} .secondary{border:1.5px solid var(--line);background:var(--card);color:var(--text);}
-.card{background:linear-gradient(145deg,#1e1e2e,#1a1a26);border:1.5px solid var(--line);border-radius:14px;padding:16px;transition:0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.3);}
-.card:hover{border-color:var(--p);transform:translateY(-2px);box-shadow:0 8px 25px rgba(139,92,246,0.2);}
-.card h3{color:white;} .card p{color:var(--muted);} .card strong{color:white;}
-.timeline,.skill-grid,.cert-grid{display:grid;gap:10px;}
+body{font-family:'Manrope',sans-serif;font-size:12px;color:var(--text);background:var(--bg);line-height:1.6;transition:0.3s;}
+.container{width:min(860px,100% - 20px);margin:0 auto;}
+.site-header{position:sticky;top:0;z-index:99;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);border-bottom:1.5px solid var(--line);}
+.navbar{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:10px;flex-wrap:wrap;}
+.logo{font-size:18px;font-weight:800;color:var(--text);cursor:pointer;text-decoration:none;} .logo span{color:var(--purple);}
+.nav-links{display:flex;list-style:none;gap:6px;flex-wrap:wrap;align-items:center;}
+.nav-links a{font-size:10px;font-weight:700;padding:7px 12px;border-radius:20px;cursor:pointer;border:1.5px solid var(--line);background:var(--card);color:var(--text);transition:0.3s;text-decoration:none;}
+.nav-links a:hover,.nav-links a.active{background:linear-gradient(90deg,var(--purple),var(--pink));color:white;border-color:transparent;}
+.theme-box{display:flex;gap:6px;align-items:center;margin-left:8px;}
+.theme-btn{padding:6px 12px;border-radius:20px;font-size:10px;font-weight:700;cursor:pointer;border:1.5px solid var(--line);transition:0.3s;}
+.btn-dark{background:#1a1a23;color:white;} .btn-light{background:white;color:#1e1b4b;} .btn-violet{background:linear-gradient(90deg,#8b5cf6,#ec4899);color:white;border-color:transparent;}
+.page{display:none;animation:fade 0.4s ease;} .page.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.section{padding:32px 0;}
+.eyebrow{font-size:10px;letter-spacing:2px;font-weight:800;color:var(--purple);margin-bottom:6px;}
+.section-title{font-size:22px;font-weight:800;margin-bottom:16px;color:var(--text);}
+.profile-wrapper{width:180px;height:210px;margin:0 auto 16px;display:grid;place-items:center;}
+.profile-wrapper img{width:165px;height:195px;border-radius:22px;object-fit:cover;object-position:50% 10%;border:3px solid var(--line);box-shadow:0 0 0 3px var(--purple),0 12px 30px rgba(0,0,0,0.2);background:var(--card);display:block;}
+.hero-copy{text-align:center;} .hero-copy h1{font-size:24px;margin:8px 0;} .hero-copy h1 span{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 4px 15px rgba(0,0,0,0.05);}
+.timeline,.skill-grid,.cert-grid{display:grid;gap:12px;}
 .timeline{grid-template-columns:repeat(2,1fr);} .skill-grid{grid-template-columns:repeat(4,1fr);} .cert-grid{grid-template-columns:repeat(2,1fr);}
-.year{font-size:9px;color:white;font-weight:800;background:linear-gradient(90deg,var(--p),var(--pink));padding:3px 8px;border-radius:12px;}
-.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;} .chips span{padding:4px 10px;border-radius:12px;background:#252538;color:#cbd5e1;font-size:10px;border:1px solid #2a2a4a;}
-.next-bar{display:flex;justify-content:space-between;margin-top:22px;padding-top:16px;border-top:1.5px dashed var(--line);flex-wrap:wrap;gap:8px;}
-footer{border-top:1.5px solid var(--line);padding:14px 0;font-size:10px;background:#0f0f14;margin-top:20px;color:var(--muted);}
+.year{font-size:9px;color:white;font-weight:800;background:linear-gradient(90deg,var(--purple),var(--pink));padding:4px 10px;border-radius:12px;display:inline-block;}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;} .chips span{padding:4px 10px;border-radius:12px;background:color-mix(in srgb,var(--line) 60%,var(--card));color:var(--text);font-size:10px;border:1px solid var(--line);}
+.button{display:inline-flex;padding:9px 18px;border-radius:20px;font-weight:700;font-size:11px;text-decoration:none;cursor:pointer;}
+.primary{background:linear-gradient(90deg,var(--purple),var(--pink));color:white;} .secondary{border:1.5px solid var(--line);background:var(--card);color:var(--text);}
+.next-bar{display:flex;justify-content:space-between;margin-top:24px;padding-top:16px;border-top:1.5px dashed var(--line);flex-wrap:wrap;gap:10px;}
+footer{border-top:1.5px solid var(--line);padding:14px 0;font-size:10px;color:var(--muted);margin-top:20px;}
 .footer-inner{display:flex;justify-content:space-between;}
 .blink{animation:blink 1s steps(2,start) infinite;} @keyframes blink{50%{opacity:0;}}
-@media(max-width:700px){.skill-grid{grid-template-columns:repeat(2,1fr);} .timeline,.cert-grid{grid-template-columns:1fr;} .nav-links a{font-size:9px;padding:6px 9px;}}
+@media(max-width:700px){.skill-grid{grid-template-columns:repeat(2,1fr);} .timeline,.cert-grid{grid-template-columns:1fr;}}
 </style>
 </head>
-<body>
+<body class="dark">
 <header class="site-header">
 <nav class="navbar container">
 <a class="logo" onclick="showPage('home')">Pavithra<span>.</span></a>
 <ul class="nav-links">
 <li><a id="link-home" class="active" onclick="showPage('home')">Home</a></li>
 <li><a id="link-about" onclick="showPage('about')">About</a></li>
-<li><a id="link-education" onclick="showPage('education')">Education</a></li>
+<li><a id="link-education" onclick="showPage('education')">Edu</a></li>
 <li><a id="link-skills" onclick="showPage('skills')">Skills</a></li>
 <li><a id="link-certs" onclick="showPage('certs')">Certs</a></li>
 <li><a id="link-projects" onclick="showPage('projects')">Projects</a></li>
 <li><a id="link-contact" onclick="showPage('contact')">Contact</a></li>
+<li class="theme-box">
+<button class="theme-btn btn-dark" onclick="setTheme('dark')">🌙 Dark</button>
+<button class="theme-btn btn-light" onclick="setTheme('light')">☀️ Light</button>
+<button class="theme-btn btn-violet" onclick="setViolet()">💜 Violet</button>
+</li>
 </ul>
 </nav>
 </header>
@@ -62,78 +82,44 @@ footer{border-top:1.5px solid var(--line);padding:14px 0;font-size:10px;backgrou
 <div class="profile-wrapper"><img src="profile.jpg" alt="Pavithra S"></div>
 <p class="eyebrow blink">COMPUTER SCIENCE STUDENT</p>
 <h1>Hello, I'm <span>Pavithra S</span></h1>
-<p style="color:var(--muted);max-width:500px;margin:0 auto 14px;">B.Sc CS at KG College of Arts and Science, Coimbatore. I love Programming & Web Tech!</p>
-<div style="display:flex;gap:8px;justify-content:center;"><a class="button primary" onclick="showPage('contact')">Contact Me →</a><a class="button secondary" onclick="showPage('projects')">Projects</a></div>
+<p style="color:var(--muted);max-width:520px;margin:0 auto 16px;">B.Sc CS at KG College, Coimbatore. Programming & Web Tech lover!</p>
+<div style="display:flex;gap:10px;justify-content:center;"><a class="button primary" onclick="showPage('contact')">Contact →</a><a class="button secondary" onclick="showPage('projects')">Projects</a></div>
 </div></div>
-<div class="next-bar"><span style="color:var(--muted);">Welcome da Pavi! Dark mode 🖤</span><a class="button primary" onclick="showPage('about')">Next: About →</a></div>
+<div class="next-bar"><span style="color:var(--muted);">Click top right to change colours da Pavi! 👆</span><a class="button primary" onclick="showPage('about')">Next →</a></div>
 </div>
-<div id="page-about" class="page">
-<div class="section"><p class="eyebrow">PAGE 2 / ABOUT</p><h2 class="section-title">About Me</h2>
-<div class="card"><p style="color:var(--text);">I am pursuing Computer Science and building foundation in programming, web development, databases, and cloud. I value teamwork, communication, leadership.</p>
-<div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;color:var(--muted);"><p><strong style="color:white;">College:</strong> KG CAS</p><p><strong style="color:white;">Location:</strong> Coimbatore</p><p><strong style="color:white;">Languages:</strong> Tamil, English</p><p><strong style="color:white;">Interests:</strong> Reading, dancing, design</p></div></div>
-<div class="next-bar"><a class="button secondary" onclick="showPage('home')">← Back</a><a class="button primary" onclick="showPage('education')">Next: Education →</a></div>
-</div>
-</div>
-<div id="page-education" class="page">
-<div class="section"><p class="eyebrow">PAGE 3 / EDUCATION</p><h2 class="section-title">Education</h2>
-<div class="timeline">
-<div class="card"><span class="year">2024-25</span><h3 style="margin-top:6px;">B.Sc CS - Sem I</h3><p>KG CAS</p><strong>82.86%</strong></div>
-<div class="card"><span class="year">2024-25</span><h3 style="margin-top:6px;">B.Sc CS - Sem II</h3><p>KG CAS</p><strong>88.14%</strong></div>
-<div class="card"><span class="year">2025</span><h3 style="margin-top:6px;">12th Standard</h3><p>Swathanthra HSS</p><strong>88%</strong></div>
-<div class="card"><span class="year">2023</span><h3 style="margin-top:6px;">10th SSLC</h3><p>Swathanthra HSS</p><strong>94%</strong></div>
-</div>
-<div class="next-bar"><a class="button secondary" onclick="showPage('about')">← Back</a><a class="button primary" onclick="showPage('skills')">Next: Skills →</a></div>
-</div>
-</div>
-<div id="page-skills" class="page">
-<div class="section"><p class="eyebrow">PAGE 4 / SKILLS</p><h2 class="section-title">Skills</h2>
-<div class="skill-grid">
-<div class="card"><h3>Programming</h3><div class="chips"><span>C</span><span>Python</span><span>Java</span></div></div>
-<div class="card"><h3>Web Tech</h3><div class="chips"><span>HTML</span><span>JS</span><span>CSS</span></div></div>
-<div class="card"><h3>Databases</h3><div class="chips"><span>SQL</span><span>MongoDB</span></div></div>
-<div class="card"><h3>Cloud</h3><div class="chips"><span>Azure</span><span>Security</span></div></div>
-</div>
-<div class="next-bar"><a class="button secondary" onclick="showPage('education')">← Back</a><a class="button primary" onclick="showPage('certs')">Next: Certificates →</a></div>
-</div>
-</div>
-<div id="page-certs" class="page">
-<div class="section"><p class="eyebrow">PAGE 5 / CERTIFICATES</p><h2 class="section-title">Certifications ✨</h2>
-<div class="cert-grid">
-<div class="card"><span class="year">2026</span><h3 style="margin:8px 0;">Big Data Computing</h3><p>NPTEL - Elite</p></div>
-<div class="card"><span class="year">2025</span><h3 style="margin:8px 0;">Python Programming</h3><p>Coursera</p></div>
-<div class="card"><span class="year">2026</span><h3 style="margin:8px 0;">Java Development</h3><p>Coursera</p></div>
-<div class="card"><span class="year">2026</span><h3 style="margin:8px 0;">Azure Fundamentals</h3><p>Microsoft - AZ-900</p></div>
-<div class="card"><span class="year">2025</span><h3 style="margin:8px 0;">Web Development</h3><p>KG CAS Workshop</p></div>
-<div class="card"><span class="year">2024</span><h3 style="margin:8px 0;">C Programming</h3><p>College Cert</p></div>
-</div>
-<div class="next-bar"><a class="button secondary" onclick="showPage('skills')">← Back</a><a class="button primary" onclick="showPage('projects')">Next: Projects →</a></div>
-</div>
-</div>
-<div id="page-projects" class="page">
-<div class="section"><p class="eyebrow">PAGE 6 / PROJECTS</p><h2 class="section-title">My Projects</h2>
-<div class="card"><span class="year">WEB DEV</span><h3 style="margin:8px 0;">Invoice Generator</h3><p>Web-based invoice generator with GST and discounts. Built with HTML, CSS, JS.</p><div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;"><a class="button primary" href="https://pavithra26012007.github.io/pavithrainvoicegenerator/" target="_blank">View Live ↗</a><a class="button secondary" href="https://github.com/pavithra26012007/pavithrainvoicegenerator" target="_blank">GitHub ↗</a></div></div>
-<div class="next-bar"><a class="button secondary" onclick="showPage('certs')">← Back</a><a class="button primary" onclick="showPage('contact')">Next: Contact →</a></div>
-</div>
-</div>
-<div id="page-contact" class="page">
-<div class="section"><p class="eyebrow">PAGE 7 / CONTACT</p><h2 class="section-title">Contact Me</h2>
-<div class="card"><p><strong style="color:white;">Phone:</strong> <a href="tel:8438623659" style="color:var(--p);">8438623659</a></p><p style="margin:8px 0;"><strong style="color:white;">Email:</strong> <a href="mailto:25bcs041@kgcas.com" style="color:var(--p);">25bcs041@kgcas.com</a></p><p><strong style="color:white;">Location:</strong> Coimbatore</p></div>
-<div class="next-bar"><a class="button secondary" onclick="showPage('projects')">← Back</a><a class="button primary" onclick="showPage('home')">Back to Home ↑</a></div>
-</div>
-</div>
+<div id="page-about" class="page"><div class="section"><p class="eyebrow">PAGE 2</p><h2 class="section-title">About Me</h2><div class="card"><p>I am pursuing CS and building foundation in programming, web dev, databases, cloud. Teamwork, communication, leadership.</p><div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;color:var(--muted);"><p><strong>College:</strong> KG CAS</p><p><strong>Location:</strong> Coimbatore</p><p><strong>Languages:</strong> Tamil, English</p><p><strong>Interests:</strong> Reading, dancing</p></div></div><div class="next-bar"><a class="button secondary" onclick="showPage('home')">← Back</a><a class="button primary" onclick="showPage('education')">Next →</a></div></div></div>
+<div id="page-education" class="page"><div class="section"><p class="eyebrow">PAGE 3</p><h2 class="section-title">Education</h2><div class="timeline"><div class="card"><span class="year">2024-25</span><h3 style="margin-top:8px;">B.Sc CS Sem I</h3><p>KG CAS - 82.86%</p></div><div class="card"><span class="year">2024-25</span><h3 style="margin-top:8px;">B.Sc CS Sem II</h3><p>KG CAS - 88.14%</p></div><div class="card"><span class="year">2025</span><h3 style="margin-top:8px;">12th Standard</h3><p>Swathanthra HSS - 88%</p></div><div class="card"><span class="year">2023</span><h3 style="margin-top:8px;">10th SSLC</h3><p>Swathanthra HSS - 94%</p></div></div><div class="next-bar"><a class="button secondary" onclick="showPage('about')">← Back</a><a class="button primary" onclick="showPage('skills')">Next →</a></div></div></div>
+<div id="page-skills" class="page"><div class="section"><p class="eyebrow">PAGE 4</p><h2 class="section-title">Skills</h2><div class="skill-grid"><div class="card"><h3>Programming</h3><div class="chips"><span>C</span><span>Python</span><span>Java</span></div></div><div class="card"><h3>Web Tech</h3><div class="chips"><span>HTML</span><span>CSS</span><span>JS</span></div></div><div class="card"><h3>Databases</h3><div class="chips"><span>SQL</span><span>MongoDB</span></div></div><div class="card"><h3>Cloud</h3><div class="chips"><span>Azure</span><span>Security</span></div></div></div><div class="next-bar"><a class="button secondary" onclick="showPage('education')">← Back</a><a class="button primary" onclick="showPage('certs')">Next →</a></div></div></div>
+<div id="page-certs" class="page"><div class="section"><p class="eyebrow">PAGE 5 / CERTIFICATES</p><h2 class="section-title">Certifications ✨</h2><div class="cert-grid"><div class="card"><span class="year">2026</span><h3 style="margin:8px 0;">Big Data Computing</h3><p>NPTEL Elite</p></div><div class="card"><span class="year">2025</span><h3 style="margin:8px 0;">Python</h3><p>Coursera</p></div><div class="card"><span class="year">2026</span><h3 style="margin:8px 0;">Java</h3><p>Coursera</p></div><div class="card"><span class="year">2026</span><h3 style="margin:8px 0;">Azure Fundamentals</h3><p>AZ-900</p></div><div class="card"><span class="year">2025</span><h3 style="margin:8px 0;">Web Dev</h3><p>KG CAS</p></div><div class="card"><span class="year">2024</span><h3 style="margin:8px 0;">C Programming</h3><p>College</p></div></div><div class="next-bar"><a class="button secondary" onclick="showPage('skills')">← Back</a><a class="button primary" onclick="showPage('projects')">Next →</a></div></div></div>
+<div id="page-projects" class="page"><div class="section"><p class="eyebrow">PAGE 6</p><h2 class="section-title">Projects</h2><div class="card"><span class="year">WEB DEV</span><h3 style="margin:8px 0;">Invoice Generator</h3><p>Web invoice with GST. HTML/CSS/JS.</p><div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;"><a class="button primary" href="https://pavithra26012007.github.io/pavithrainvoicegenerator/" target="_blank">Live ↗</a><a class="button secondary" href="https://github.com/pavithra26012007/pavithrainvoicegenerator" target="_blank">GitHub ↗</a></div></div><div class="next-bar"><a class="button secondary" onclick="showPage('certs')">← Back</a><a class="button primary" onclick="showPage('contact')">Next →</a></div></div></div>
+<div id="page-contact" class="page"><div class="section"><p class="eyebrow">PAGE 7</p><h2 class="section-title">Contact</h2><div class="card"><p><strong>Phone:</strong> <a href="tel:8438623659" style="color:var(--purple);">8438623659</a></p><p style="margin:8px 0;"><strong>Email:</strong> <a href="mailto:25bcs041@kgcas.com" style="color:var(--purple);">25bcs041@kgcas.com</a></p><p><strong>Location:</strong> Coimbatore</p></div><div class="next-bar"><a class="button secondary" onclick="showPage('projects')">← Back</a><a class="button primary" onclick="showPage('home')">Home ↑</a></div></div></div>
 </main>
-<footer><div class="container footer-inner"><span>© 2026 Pavithra S - Dark Mode 🖤</span><span>7 Pages</span></div></footer>
+<footer><div class="container footer-inner"><span>© 2026 Pavithra S</span><span>🌙☀️💜 Toggle available</span></div></footer>
 <script>
-function showPage(pageName){
+function showPage(n){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById('page-'+pageName).classList.add('active');
+  document.getElementById('page-'+n).classList.add('active');
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
-  document.getElementById('link-'+pageName).classList.add('active');
+  const link=document.getElementById('link-'+n);
+  if(link) link.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
-  history.pushState(null,null,'#'+pageName);
+  history.pushState(null,null,'#'+n);
 }
-const initial = location.hash.replace('#','');
-if(initial && document.getElementById('page-'+initial)) showPage(initial);
+function setTheme(mode){
+  if(mode==='dark'){document.body.classList.add('dark');}
+  else{document.body.classList.remove('dark');}
+  localStorage.setItem('theme',mode);
+}
+function setViolet(){
+  const violets=[['#8b5cf6','#ec4899'],['#7c3aed','#a855f7'],['#6d28d9','#db2777'],['#9333ea','#c084fc']];
+  const pick=violets[Math.floor(Math.random()*violets.length)];
+  document.documentElement.style.setProperty('--purple',pick[0]);
+  document.documentElement.style.setProperty('--pink',pick[1]);
+}
+const saved=localStorage.getItem('theme');
+if(saved){ setTheme(saved); }
+const init=location.hash.replace('#','');
+if(init && document.getElementById('page-'+init)) showPage(init);
 </script>
 </body>
 </html>
