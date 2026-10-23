@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Pavithra S, Computer Science student at KG College of Arts and Science, Coimbatore.">
   <title>Pavithra S | Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- COLOURFUL ANIMATED BLOBS BACKGROUND -->
   <div class="bg-blobs">
     <span class="blob blob1"></span>
     <span class="blob blob2"></span>
@@ -19,13 +17,13 @@
   <header class="site-header">
     <nav class="navbar container">
       <a class="logo" href="#home">Pavithra<span>.</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false">☰</button>
+      <button class="menu-toggle" id="menuToggle">☰</button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
+        <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#certifications">Certs</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -34,122 +32,45 @@
 
   <main>
     <section class="hero section" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy" style="text-align:center;">
-          <!-- BIG PHOTO - FIXED -->
+      <div class="container">
+        <div class="hero-copy">
           <div class="profile-wrapper">
             <img src="profile.jpg" alt="Pavithra S">
+            <div class="ring ring1"></div>
+            <div class="ring ring2"></div>
           </div>
-          <p class="eyebrow">COMPUTER SCIENCE STUDENT</p>
-          <h1>Hello, I'm <span>Pavithra S</span></h1>
+          <p class="eyebrow blink">COMPUTER SCIENCE STUDENT</p>
+          <h1>Hello, I'm <span id="typingName">Pavithra S</span></h1>
           <h2>Learning, building, and creating with technology.</h2>
-          <p class="intro">I am a Bachelor of Science in Computer Science student at KG College of Arts and Science, Coimbatore. I enjoy learning programming, databases, web technologies, and cloud fundamentals.</p>
+          <p class="intro">B.Sc CS student at KG College of Arts and Science, Coimbatore. I love <span class="highlight">Programming</span> & Web Tech!</p>
           <div class="hero-actions">
             <a class="button primary" href="#contact">Contact Me</a>
-            <a class="button secondary" href="#education">View Education</a>
+            <a class="button secondary" href="#projects">Projects</a>
           </div>
           <div class="quick-facts">
-            <div><strong>94%</strong><span>SSLC</span></div>
-            <div><strong>88%</strong><span>Higher Secondary</span></div>
-            <div><strong>18+</strong><span>Courses</span></div>
+            <div class="fact-card"><strong class="counter" data-target="94">0</strong><span>SSLC</span></div>
+            <div class="fact-card"><strong class="counter" data-target="88">0</strong><span>HSC</span></div>
+            <div class="fact-card"><strong class="counter" data-target="18">0</strong><span>Courses</span></div>
           </div>
+          <p class="marquee"><span>✨ HTML • CSS • JS • Python • Java • C • SQL • MongoDB • Azure ✨</span></p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
-      <div class="container">
-        <p class="eyebrow">GET TO KNOW ME</p>
-        <h2 class="section-title">About Me</h2>
-        <div class="about-card">
-          <p>I am pursuing Computer Science and building my foundation in programming, web development, databases, and cloud concepts. I value teamwork, communication, leadership, problem-solving, decision-making, and time management.</p>
-          <div class="about-details">
-            <p><strong>College</strong><span>KG College of Arts and Science</span></p>
-            <p><strong>Location</strong><span>Coimbatore, Tamil Nadu</span></p>
-            <p><strong>Languages</strong><span>Tamil, English</span></p>
-            <p><strong>Interests</strong><span>Reading, dancing, creative design, social activities</span></p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="section" id="about"><div class="container"><p class="eyebrow">ABOUT</p><h2 class="section-title">About Me</h2><div class="about-card"><p>I am pursuing Computer Science and building foundation in programming, web development, databases, and cloud. I value teamwork, communication, leadership.</p><div class="about-details"><p><strong>College</strong><span>KG College of Arts and Science</span></p><p><strong>Location</strong><span>Coimbatore</span></p><p><strong>Languages</strong><span>Tamil, English</span></p><p><strong>Interests</strong><span>Reading, dancing, design</span></p></div></div></div></section>
 
-    <section class="section tinted" id="education">
-      <div class="container">
-        <p class="eyebrow">MY ACADEMIC JOURNEY</p>
-        <h2 class="section-title">Education</h2>
-        <div class="timeline">
-          <article class="timeline-card"><span class="year">2024–25</span><h3>B.Sc. Computer Science — Sem I</h3><p>KG College of Arts and Science</p><strong>82.86%</strong></article>
-          <article class="timeline-card"><span class="year">2024–25</span><h3>B.Sc. Computer Science — Sem II</h3><p>KG College of Arts and Science</p><strong>88.14%</strong></article>
-          <article class="timeline-card"><span class="year">2025</span><h3>Higher Secondary (12th)</h3><p>Swathanthra HSS</p><strong>88%</strong></article>
-          <article class="timeline-card"><span class="year">2023</span><h3>SSLC (10th)</h3><p>Swathanthra HSS</p><strong>94%</strong></article>
-        </div>
-      </div>
-    </section>
+    <section class="section tinted" id="education"><div class="container"><p class="eyebrow">EDUCATION</p><h2 class="section-title">Education</h2><div class="timeline"><article class="timeline-card"><span class="year">2024-25</span><h3>B.Sc CS - Sem I</h3><p>KG CAS</p><strong>82.86%</strong></article><article class="timeline-card"><span class="year">2024-25</span><h3>B.Sc CS - Sem II</h3><p>KG CAS</p><strong>88.14%</strong></article><article class="timeline-card"><span class="year">2025</span><h3>12th Standard</h3><p>Swathanthra HSS</p><strong>88%</strong></article><article class="timeline-card"><span class="year">2023</span><h3>10th SSLC</h3><p>Swathanthra HSS</p><strong>94%</strong></article></div></div></section>
 
-    <section class="section" id="skills">
-      <div class="container">
-        <p class="eyebrow">WHAT I'M LEARNING</p>
-        <h2 class="section-title">Skills</h2>
-        <div class="skill-grid">
-          <article class="skill-card"><div class="skill-icon">⌘</div><h3>Programming</h3><div class="chips"><span>C Programming</span><span>Python</span></div></article>
-          <article class="skill-card"><div class="skill-icon">⌁</div><h3>Web Technologies</h3><div class="chips"><span>HTML</span><span>JavaScript</span><span>CSS & Bootstrap</span></div></article>
-          <article class="skill-card"><div class="skill-icon">▤</div><h3>Databases</h3><div class="chips"><span>DBMS</span><span>SQL Foundation</span><span>MongoDB Basics</span></div></article>
-          <article class="skill-card"><div class="skill-icon">☁</div><h3>Cloud & Tools</h3><div class="chips"><span>Azure Fundamentals</span><span>Cloud Security</span><span>Java OOP</span></div></article>
-        </div>
-        <h3 class="subheading">Soft Skills</h3>
-        <div class="chips soft-chips"><span>Communication</span><span>Teamwork</span><span>Leadership</span><span>Problem Solving</span><span>Decision Making</span><span>Time Management</span></div>
-      </div>
-    </section>
+    <section class="section" id="skills"><div class="container"><p class="eyebrow">SKILLS</p><h2 class="section-title">Skills</h2><div class="skill-grid"><article class="skill-card"><div class="skill-icon">⌘</div><h3>Programming</h3><div class="chips"><span>C</span><span>Python</span></div></article><article class="skill-card"><div class="skill-icon">⌁</div><h3>Web Tech</h3><div class="chips"><span>HTML</span><span>JS</span><span>CSS</span></div></article><article class="skill-card"><div class="skill-icon">▤</div><h3>Databases</h3><div class="chips"><span>SQL</span><span>MongoDB</span></div></article><article class="skill-card"><div class="skill-icon">☁</div><h3>Cloud</h3><div class="chips"><span>Azure</span><span>Security</span></div></article></div></div></section>
 
-    <section class="section tinted" id="certifications">
-      <div class="container">
-        <p class="eyebrow">CONTINUOUS LEARNING</p>
-        <h2 class="section-title">Certifications</h2>
-        <div class="cert-grid">
-          <article class="cert-card"><span class="cert-year">2026</span><h3>Big Data Computing</h3><p>NPTEL</p></article>
-          <article class="cert-card"><span class="cert-year">2025</span><h3>Programming in Python</h3><p>Coursera</p></article>
-          <article class="cert-card"><span class="cert-year">2025</span><h3>C Programming with DSA</h3><p>Coursera</p></article>
-          <article class="cert-card"><span class="cert-year">2026</span><h3>Advanced Java Development</h3><p>Coursera</p></article>
-          <article class="cert-card"><span class="cert-year">2026</span><h3>Supermarket App Using Java OOP</h3><p>Coursera</p></article>
-          <article class="cert-card"><span class="cert-year">2026</span><h3>AZ-900 Azure Fundamentals</h3><p>Coursera</p></article>
-          <article class="cert-card"><span class="cert-year">2026</span><h3>MongoDB Basics — Skill Badge</h3><p>ICT Academy</p></article>
-          <article class="cert-card"><span class="cert-year">2026</span><h3>Celonis Foundations</h3><p>Celonis Academy</p></article>
-          <article class="cert-card"><span class="cert-year">2026</span><h3>Cloud Security Foundation</h3><p>Coursera</p></article>
-          <article class="cert-card"><span class="cert-year">2026</span><h3>Computing and Operating Systems</h3><p>Microsoft</p></article>
-        </div>
-      </div>
-    </section>
+    <section class="section tinted" id="certifications"><div class="container"><p class="eyebrow">CERTS</p><h2 class="section-title">Certifications</h2><div class="cert-grid"><article class="cert-card"><span class="cert-year">2026</span><h3>Big Data Computing</h3><p>NPTEL</p></article><article class="cert-card"><span class="cert-year">2025</span><h3>Python Programming</h3><p>Coursera</p></article><article class="cert-card"><span class="cert-year">2026</span><h3>Java Development</h3><p>Coursera</p></article><article class="cert-card"><span class="cert-year">2026</span><h3>Azure Fundamentals</h3><p>Coursera</p></article></div></div></section>
 
-    <section class="section" id="projects">
-      <div class="container">
-        <p class="eyebrow">WHAT I'VE BUILT</p>
-        <h2 class="section-title">My Project</h2>
-        <article class="project-card">
-          <div class="project-topline"><span class="project-label">WEB DEVELOPMENT</span><span class="project-status"><span class="status-dot"></span> Live</span></div>
-          <h3>Invoice Generator</h3>
-          <p class="project-description">A web-based invoice generator that helps users enter customer and product details and calculate totals including GST and discounts.</p>
-          <div class="project-tech"><strong>Tech Used</strong><div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
-          <div class="project-actions">
-            <a class="button primary" href="https://pavithra26012007.github.io/pavithrainvoicegenerator/" target="_blank">View Live ↗</a>
-            <a class="button secondary" href="https://github.com/pavithra26012007/pavithrainvoicegenerator" target="_blank">GitHub ↗</a>
-          </div>
-        </article>
-      </div>
-    </section>
+    <section class="section" id="projects"><div class="container"><p class="eyebrow">PROJECT</p><h2 class="section-title">My Project</h2><article class="project-card"><div class="project-topline"><span class="project-label">WEB DEV</span><span class="project-status"><span class="status-dot"></span> Live</span></div><h3>Invoice Generator</h3><p>Web-based invoice generator with GST and discounts.</p><div class="project-actions"><a class="button primary" href="https://pavithra26012007.github.io/pavithrainvoicegenerator/" target="_blank">View Live ↗</a><a class="button secondary" href="https://github.com/pavithra26012007/pavithrainvoicegenerator" target="_blank">GitHub ↗</a></div></article></div></section>
 
-    <section class="section" id="contact">
-      <div class="container contact-layout">
-        <div><p class="eyebrow">LET'S CONNECT</p><h2 class="section-title">Contact Me</h2><p class="contact-text">Feel free to reach out for learning opportunities and collaborations.</p></div>
-        <div class="contact-card">
-          <p><span>Phone</span><a href="tel:8438623659">8438623659</a></p>
-          <p><span>Email</span><a href="mailto:25bcs041@kgcas.com">25bcs041@kgcas.com</a></p>
-          <p><span>Location</span><strong>Coimbatore, Tamil Nadu</strong></p>
-        </div>
-      </div>
-    </section>
+    <section class="section" id="contact"><div class="container contact-layout"><div><p class="eyebrow">CONNECT</p><h2 class="section-title">Contact Me</h2><p>Reach out for collaborations!</p></div><div class="contact-card"><p><span>Phone</span><a href="tel:8438623659">8438623659</a></p><p><span>Email</span><a href="mailto:25bcs041@kgcas.com">25bcs041@kgcas.com</a></p><p><span>Location</span><strong>Coimbatore</strong></p></div></div></section>
   </main>
 
-  <footer><div class="container footer-inner"><span>© <span id="year"></span> Pavithra S</span><a href="#home">Back to top ↑</a></div></footer>
+  <footer><div class="container footer-inner"><span>© <span id="year"></span> Pavithra S</span><a href="#home">Top ↑</a></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
