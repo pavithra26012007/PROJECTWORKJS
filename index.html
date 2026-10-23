@@ -1,41 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pavithra S | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--p:#8b5cf6;--pink:#ec4899;--bg:#0f0f14;--card:#1a1a23;--card2:#1e1e2e;--line:#2a2a3a;--text:#e5e7eb;--muted:#9ca3af;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Manrope',sans-serif;font-size:12px;color:var(--text);background:var(--bg);line-height:1.5;overflow-x:hidden;}
+.container{width:min(850px,100% - 20px);margin:0 auto;}
+.site-header{position:sticky;top:0;z-index:99;background:rgba(15,15,20,0.92);backdrop-filter:blur(12px);border-bottom:1.5px solid var(--line);}
+.navbar{display:flex;justify-content:space-between;align-items:center;min-height:56px;}
+.logo{font-size:17px;font-weight:800;color:white;cursor:pointer;text-decoration:none;} .logo span{color:var(--p);}
+.nav-links{display:flex;list-style:none;gap:6px;overflow-x:auto;scrollbar-width:none;}
+.nav-links::-webkit-scrollbar{display:none;}
+.nav-links a{white-space:nowrap;color:var(--muted);font-weight:700;font-size:10px;padding:7px 12px;border-radius:20px;cursor:pointer;border:1.5px solid var(--line);background:#1e1e2a;text-decoration:none;flex-shrink:0;transition:0.3s;}
+.nav-links a:hover,.nav-links a.active{background:linear-gradient(90deg,var(--p),var(--pink));color:white;border-color:transparent;box-shadow:0 4px 15px rgba(139,92,246,0.4);}
+.page{display:none;animation:pageIn 0.4s ease;} .page.active{display:block;}
+@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.section{padding:28px 0;}
+.eyebrow{font-size:9px;letter-spacing:2px;font-weight:800;color:var(--p);margin-bottom:6px;}
+.section-title{font-size:21px;margin:0 0 14px;font-weight:800;color:white;}
+.profile-wrapper{width:180px;height:200px;margin:0 auto 14px;display:grid;place-items:center;}
+.profile-wrapper img{width:160px!important;height:190px!important;border-radius:22px!important;object-fit:cover!important;object-position:50% 10%!important;border:3px solid #2a2a3a!important;box-shadow:0 0 0 3px #8b5cf6,0 12px 30px rgba(0,0,0,0.5)!important;background:#1a1a23;display:block;}
+.hero-copy{text-align:center;} .hero-copy h1{font-size:23px;margin:8px 0;color:white;} .hero-copy h1 span{background:linear-gradient(90deg,var(--p),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.button{display:inline-flex;padding:8px 16px;border-radius:20px;font-weight:700;font-size:11px;text-decoration:none;cursor:pointer;transition:0.3s;}
+.primary{background:linear-gradient(90deg,var(--p),var(--pink));color:white;box-shadow:0 4px 12px rgba(139,92,246,0.4);} .secondary{border:1.5px solid var(--line);background:var(--card);color:var(--text);}
+.card{background:linear-gradient(145deg,#1e1e2e,#1a1a26);border:1.5px solid var(--line);border-radius:14px;padding:16px;transition:0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.3);}
+.card:hover{border-color:var(--p);transform:translateY(-2px);}
+.timeline,.cert-grid{display:grid;gap:10px;} .timeline{grid-template-columns:repeat(2,1fr);} .cert-grid{grid-template-columns:repeat(2,1fr);}
+.year{font-size:9px;color:white;font-weight:800;background:linear-gradient(90deg,var(--p),var(--pink));padding:3px 8px;border-radius:12px;display:inline-block;}
+
+/* SKILLS HORIZONTAL SLIDE WITH EMOJI */
+.skill-slider{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 16px;scrollbar-width:thin;}
+.skill-slider::-webkit-scrollbar{height:6px;} .skill-slider::-webkit-scrollbar-thumb{background:var(--p);border-radius:10px;}
+.skill-card{min-width:170px;max-width:170px;scroll-snap-align:start;background:linear-gradient(145deg,#1e1e2e,#1a1a26);border:1.5px solid var(--line);border-radius:16px;padding:16px;text-align:center;flex-shrink:0;transition:0.3s;}
+.skill-card:hover{border-color:var(--p);transform:translateY(-4px) scale(1.02);box-shadow:0 8px 25px rgba(139,92,246,0.25);}
+.skill-emoji{font-size:34px;display:block;margin-bottom:8px;}
+.skill-card h3{font-size:13px;color:white;margin-bottom:6px;}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;justify-content:center;} .chips span{padding:4px 8px;border-radius:12px;background:#252538;color:#cbd5e1;font-size:9px;border:1px solid #2a2a4a;}
+
+/* RIGHT SIDE UP NEXT */
+.next-float{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:10px;}
+.next-float a{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--p),var(--pink));color:white;font-size:18px;font-weight:800;text-decoration:none;box-shadow:0 6px 20px rgba(139,92,246,0.4);cursor:pointer;transition:0.3s;}
+.next-float a:hover{transform:scale(1.1);}
+.next-float a.sec{background:#1e1e2a;border:1.5px solid var(--line);}
+
+footer{border-top:1.5px solid var(--line);padding:14px 0;font-size:10px;background:#0f0f14;margin-top:20px;color:var(--muted);}
+.footer-inner{display:flex;justify-content:space-between;}
+.blink{animation:blink 1s steps(2,start) infinite;} @keyframes blink{50%{opacity:0;}}
+@media(max-width:700px){.timeline,.cert-grid{grid-template-columns:1fr;} .next-float{right:8px;} .next-float a{width:42px;height:42px;font-size:16px;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+<nav class="navbar container">
+<a class="logo" onclick="showPage('home')">Pavithra<span>.</span></a>
+<ul class="nav-links">
+<li><a id="link-home" class="active" onclick="showPage('home')">Home</a></li>
+<li><a id="link-about" onclick="showPage('about')">About</a></li>
+<li><a id="link-education" onclick="showPage('education')">Education</a></li>
+<li><a id="link-skills" onclick="showPage('skills')">Skills</a></li>
+<li><a id="link-certs" onclick="showPage('certs')">Certs</a></li>
+<li><a id="link-projects" onclick="showPage('projects')">Projects</a></li>
+<li><a id="link-contact" onclick="showPage('contact')">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="next-float">
+<a onclick="nextPage()" title="Next">→</a>
+<a class="sec" onclick="prevPage()" title="Prev">←</a>
+</div>
+
+<main class="container">
+<div id="page-home" class="page active">
+<div class="section"><div class="hero-copy">
+<div class="profile-wrapper"><img src="profile.jpg" alt="Pavithra S"></div>
+<p class="eyebrow blink">COMPUTER SCIENCE STUDENT</p>
+<h1>Hello, I'm <span>Pavithra S</span></h1>
+<p style="color:var(--muted);max-width:500px;margin:0 auto 14px;">B.Sc CS at KG College of Arts and Science, Coimbatore. I love Programming & Web Tech!</p>
+<div style="display:flex;gap:8px;justify-content:center;"><a class="button primary" onclick="showPage('contact')">Contact Me →</a><a class="button secondary" onclick="showPage('projects')">Projects</a></div>
+</div></div>
+</div>
+
+<div id="page-about" class="page">
+<div class="section"><p class="eyebrow">PAGE 2 / ABOUT</p><h2 class="section-title">About Me</h2>
+<div class="card"><p>I am pursuing Computer Science and building foundation in programming, web development, databases, and cloud. I value teamwork, communication, leadership.</p>
+<div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;color:var(--muted);"><p><strong style="color:white;">College:</strong> KG CAS</p><p><strong style="color:white;">Location:</strong> Coimbatore</p><p><strong style="color:white;">Languages:</strong> Tamil, English</p><p><strong style="color:white;">Interests:</strong> Reading, dancing, design</p></div></div></div>
+</div>
+
+<div id="page-education" class="page">
+<div class="section"><p class="eyebrow">PAGE 3 / EDUCATION</p><h2 class="section-title">Education</h2>
+<div class="timeline">
+<div class="card"><span class="year">2024-25</span><h3 style="margin-top:6px;">B.Sc CS - Sem I</h3><p>KG CAS</p><strong>82.86%</strong></div>
+<div class="card"><span class="year">2024-25</span><h3 style="margin-top:6px;">B.Sc CS - Sem II</h3><p>KG CAS</p><strong>88.14%</strong></div>
+<div class="card"><span class="year">2025</span><h3 style="margin-top:6px;">12th Standard</h3><p>Swathanthra HSS</p><strong>88%</strong></div>
+<div class="card"><span class="year">2023</span><h3 style="margin-top:6px;">10th SSLC</h3><p>Swathanthra HSS</p><strong>94%</strong></div>
+</div></div>
+</div>
+
+<div id="page-skills" class="page">
+<div class="section">
+<p class="eyebrow">PAGE 4 / SKILLS - SLIDE 👉</p>
+<h2 class="section-title">Skills ✨</h2>
+<div class="skill-slider">
+<div class="skill-card"><span class="skill-emoji">💻</span><h3>Programming</h3><div class="chips"><span>C</span><span>Python</span><span>Java</span></div></div>
+<div class="skill-card"><span class="skill-emoji">🌐</span><h3>Web Tech</h3><div class="chips"><span>HTML</span><span>CSS</span><span>JS</span></div></div>
+<div class="skill-card"><span class="skill-emoji">🗄️</span><h3>Databases</h3><div class="chips"><span>SQL</span><span>MongoDB</span></div></div>
+<div class="skill-card"><span class="skill-emoji">☁️</span><h3>Cloud</h3><div class="chips"><span>Azure</span><span>Security</span></div></div>
+<div class="skill-card"><span class="skill-emoji">🎨</span><h3>Design</h3><div class="chips"><span>Figma</span><span>UI/UX</span></div></div>
+<div class="skill-card"><span class="skill-emoji">🤖</span><h3>Tools</h3><div class="chips"><span>Git</span><span>VS Code</span></div></div>
+<div class="skill-card"><span class="skill-emoji">📊</span><h3>Data</h3><div class="chips"><span>Excel</span><span>Power BI</span></div></div>
+</div>
+<p style="color:var(--muted);font-size:10px;text-align:center;margin-top:6px;">← Swipe to see more da Pavi! →</p>
+</div>
+</div>
+
+<div id="page-certs" class="page">
+<div class="section"><p class="eyebrow">PAGE 5 / CERTIFICATES</p><h2 class="section-title">Certifications ✨</h2>
+<div class="cert-grid">
+<div class="card"><span class="year">2026</span><h3 style="margin:8px 0;">Big Data Computing</h3><p>NPTEL - Elite</p></div>
+<div class="card"><span class="year">2025</span><h3 style="margin:8px 0;">Python Programming</h3><p>Coursera</p></div>
+<div class="card"><span class="year">2026</span><h3 style="margin:8px 0;">Java Development</h3><p>Coursera</p></div>
+<div class="card"><span class="year">2026</span><h3 style="margin:8px 0;">Azure Fundamentals</h3><p>Microsoft - AZ-900</p></div>
+<div class="card"><span class="year">2025</span><h3 style="margin:8px 0;">Web Development</h3><p>KG CAS Workshop</p></div>
+<div class="card"><span class="year">2024</span><h3 style="margin:8px 0;">C Programming</h3><p>College Cert</p></div>
+</div></div>
+</div>
+
+<div id="page-projects" class="page">
+<div class="section"><p class="eyebrow">PAGE 6 / PROJECTS</p><h2 class="section-title">My Projects</h2>
+<div class="card"><span class="year">WEB DEV</span><h3 style="margin:8px 0;">Invoice Generator</h3><p>Web-based invoice generator with GST and discounts. Built with HTML, CSS, JS.</p><div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;"><a class="button primary" href="https://pavithra26012007.github.io/pavithrainvoicegenerator/" target="_blank">View Live ↗</a><a class="button secondary" href="https://github.com/pavithra26012007/pavithrainvoicegenerator" target="_blank">GitHub ↗</a></div></div></div>
+</div>
+
 <div id="page-contact" class="page">
 <div class="section">
 <p class="eyebrow">PAGE 7 / CONTACT</p>
 <h2 class="section-title">Contact Me 📬</h2>
-
 <div style="display:grid;gap:12px;max-width:520px;">
 
-  <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px;">
-    <div style="min-width:52px;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#8b5cf6,#ec4899);display:grid;place-items:center;font-size:24px;box-shadow:0 4px 12px rgba(139,92,246,0.3);">📱</div>
-    <div style="flex:1;">
-      <p style="font-size:9px;color:var(--muted);letter-spacing:1.5px;font-weight:800;">PHONE NUMBER</p>
-      <a href="tel:8438623659" style="color:white;font-weight:800;font-size:15px;text-decoration:none;display:block;margin-top:2px;">+91 84386 23659</a>
-      <p style="font-size:10px;color:var(--muted);margin-top:2px;">Tap to call da Pavi! 📞</p>
-    </div>
-    <a href="tel:8438623659" style="width:36px;height:36px;border-radius:50%;background:#252538;display:grid;place-items:center;text-decoration:none;color:white;">↗</a>
-  </div>
+<div class="card" style="display:flex;align-items:center;gap:14px;">
+<div style="min-width:52px;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#8b5cf6,#ec4899);display:grid;place-items:center;font-size:26px;box-shadow:0 4px 12px rgba(139,92,246,0.3);">📱</div>
+<div style="flex:1;">
+<p style="font-size:9px;color:var(--muted);letter-spacing:1.5px;font-weight:800;">PHONE</p>
+<a href="tel:8438623659" style="color:white;font-weight:800;font-size:15px;text-decoration:none;display:block;margin-top:2px;">8438623659</a>
+<p style="font-size:10px;color:var(--muted);">Tap to call 📞</p>
+</div>
+<a href="tel:8438623659" style="width:36px;height:36px;border-radius:50%;background:#252538;display:grid;place-items:center;color:white;text-decoration:none;">↗</a>
+</div>
 
-  <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px;">
-    <div style="min-width:52px;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#06b6d4,#6366f1);display:grid;place-items:center;font-size:24px;box-shadow:0 4px 12px rgba(6,182,214,0.3);">📧</div>
-    <div style="flex:1;">
-      <p style="font-size:9px;color:var(--muted);letter-spacing:1.5px;font-weight:800;">EMAIL ADDRESS</p>
-      <a href="mailto:25bcs041@kgcas.com" style="color:white;font-weight:800;font-size:13px;text-decoration:none;display:block;margin-top:2px;word-break:break-all;">25bcs041@kgcas.com</a>
-      <p style="font-size:10px;color:var(--muted);margin-top:2px;">Tap to mail da! ✉️</p>
-    </div>
-    <a href="mailto:25bcs041@kgcas.com" style="width:36px;height:36px;border-radius:50%;background:#252538;display:grid;place-items:center;text-decoration:none;color:white;">↗</a>
-  </div>
+<div class="card" style="display:flex;align-items:center;gap:14px;">
+<div style="min-width:52px;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#06b6d4,#6366f1);display:grid;place-items:center;font-size:26px;box-shadow:0 4px 12px rgba(6,182,214,0.3);">📧</div>
+<div style="flex:1;">
+<p style="font-size:9px;color:var(--muted);letter-spacing:1.5px;font-weight:800;">EMAIL</p>
+<a href="mailto:25bcs041@kgcas.com" style="color:white;font-weight:800;font-size:13px;text-decoration:none;display:block;margin-top:2px;word-break:break-all;">25bcs041@kgcas.com</a>
+<p style="font-size:10px;color:var(--muted);">Tap to mail ✉️</p>
+</div>
+<a href="mailto:25bcs041@kgcas.com" style="width:36px;height:36px;border-radius:50%;background:#252538;display:grid;place-items:center;color:white;text-decoration:none;">↗</a>
+</div>
 
-  <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px;">
-    <div style="min-width:52px;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#f59e0b,#ef4444);display:grid;place-items:center;font-size:24px;box-shadow:0 4px 12px rgba(245,158,11,0.3);">🗺️</div>
-    <div style="flex:1;">
-      <p style="font-size:9px;color:var(--muted);letter-spacing:1.5px;font-weight:800;">LOCATION</p>
-      <strong style="font-size:15px;color:white;display:block;margin-top:2px;">Coimbatore 📍</strong>
-      <p style="font-size:11px;color:var(--muted);margin-top:2px;">Tamil Nadu, India - KG CAS</p>
-    </div>
-    <div style="width:36px;height:36px;border-radius:50%;background:#252538;display:grid;place-items:center;color:white;">📍</div>
-  </div>
-
+<div class="card" style="display:flex;align-items:center;gap:14px;">
+<div style="min-width:52px;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#f59e0b,#ef4444);display:grid;place-items:center;font-size:26px;box-shadow:0 4px 12px rgba(245,158,11,0.3);">🗺️</div>
+<div style="flex:1;">
+<p style="font-size:9px;color:var(--muted);letter-spacing:1.5px;font-weight:800;">LOCATION</p>
+<strong style="font-size:15px;color:white;display:block;margin-top:2px;">Coimbatore 📍</strong>
+<p style="font-size:11px;color:var(--muted);">Tamil Nadu, India - KG CAS</p>
+</div>
+<div style="width:36px;height:36px;border-radius:50%;background:#252538;display:grid;place-items:center;color:white;">📍</div>
 </div>
 
 </div>
 </div>
+</div>
+
+</main>
+<footer><div class="container footer-inner"><span>© 2026 Pavithra S - Dark Mode 🖤💜</span><span>7 Pages • Slide →</span></div></footer>
+
+<script>
+const pages=['home','about','education','skills','certs','projects','contact'];
+let current=0;
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  const l=document.getElementById('link-'+name);
+  if(l) l.classList.add('active');
+  current=pages.indexOf(name);
+  window.scrollTo({top:0,behavior:'smooth'});
+  history.pushState(null,null,'#'+name);
+}
+function nextPage(){current=(current+1)%pages.length;showPage(pages[current]);}
+function prevPage(){current=(current-1+pages.length)%pages.length;showPage(pages[current]);}
+const init=location.hash.replace('#','');
+if(init && pages.includes(init)){showPage(init);current=pages.indexOf(init);}
+</script>
+</body>
+</html>
